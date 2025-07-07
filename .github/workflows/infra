@@ -18,22 +18,22 @@ jobs:
       TF_VAR_cosmosdb_connection_string: ${{ secrets.COSMOSDB_CONNECTION_STRING }}
 
     steps:
-      - name: 📥 Code auschecken
+      - name: Code auschecken
         uses: actions/checkout@v3
 
-      - name: 🧱 Terraform einrichten
+      - name: Terraform einrichten
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.6.6
 
-      - name: ⚙️ Terraform init
+      - name: Terraform init
         run: terraform init
 
-      - name: 🕵️‍♂️ Terraform validate
+      - name: Terraform validate
         run: terraform validate
 
-      - name: 🔍 Terraform plan
+      - name: Terraform plan
         run: terraform plan
 
-      - name: 🚀 Terraform apply
+      - name: Terraform apply
         run: terraform apply -auto-approve
